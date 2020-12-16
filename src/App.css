@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+:root{
+  --barHeight: 40px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  width: 100%;
   min-height: 100vh;
+  background-image: linear-gradient(to right, #ee0979, #ff6a00);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading{
+  font-size: 3rem;
+  margin: 5% 0px;
+  font-family: 'Langar', cursive;
+}
+
+/* input */
+.input-form{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-bar{
+  outline: none;
+  width: 40%;
+  height: var(--barHeight);
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 4px 10px;
+  border: none;
+}
+.input-btn{
+  outline: none;
+  height: var(--barHeight);
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 3px 6px;
+  background-color: white;
+  border: none;
+  color: #f7383f;
+  cursor: pointer;
+  width: 3rem;
+}
+.input-btn:hover{
+  background-color: #f7383f;
+  color: white;
+}
+.input-div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.filter{
+  border: none;
+  outline: none;
+  color: rgb(199, 77, 20);
+  padding: 0.6rem;
+  overflow: hidden;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 10rem;
+  position: absolute;
+  right: 3rem;
+}
+
+/* Todos */
+.todo-list{
+  margin-top: 4%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.todo-div {
+  background-color: white;
+    width: 40%;
+    height: var(--barHeight);
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0px;
+    transition: all 0.5s ease;
+}
+.todo-content {
+  list-style: none;
+  margin: 5px 6px;
+  flex: 1;
+}
+.sel-btn{
+  height: 100%;
+  width: 3rem;
   color: white;
+  background-color: rgb(5, 133, 89);
+  border: none;
+  cursor: pointer;
+}
+.del-btn{
+  height: 100%;
+  width: 3rem;
+  color: white;
+  background-color: #c2091e;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
 }
+@media only screen and (max-width: 900px){
+  .input-div {
+    flex-direction: column;
+  }
+  .filter{
+    position: static;
+    margin: 1rem 0px;
+  }
+  .input-bar{
+    width: 80%;
+  }
+  .todo-div{
+    width: 77%;
+  }
+  .App{
+    background-image: linear-gradient(to bottom, #ee0979, #ff6a00);
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
